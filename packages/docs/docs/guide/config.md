@@ -103,7 +103,7 @@ module.exports = (board) => {
   config.plugins = {
     fetchConfig: {
       enable: true,
-      path: "fetchConfig absolute path",
+      path: "absolute/path/FetchConfigPlugin",
     },
   };
 
@@ -115,8 +115,7 @@ module.exports = () => {
   const config = {};
 
   config.fetchConfig = {
-    host: "prod mq host",
-    groupId: "prod config group id",
+    host: "prod host",
   };
 
   return config;
@@ -138,13 +137,11 @@ module.exports = () => {
 
 合并后的 FetchConfigPlugin 配置
 
-```js
+```javascript
 {
   sessionTimeout: 15000,
   fetchMaxBytes: 1048576,
   encoding: 'utf8',
-  protocol: [ 'roundrobin' ],
-  host: 'prod mq host',
-  groupId: 'prod config group id'
+  host: 'prod host',
 }
 ```

@@ -28,7 +28,7 @@ class FetchConfigPlugin extends Plugin {
 module.exports = FetchConfigPlugin;
 ```
 
-上述代码的`constructor`中有一个 name 的字段，它的一个非常重要的作用就是从最后的配置中找出名为`fetchConfig`的字段（如下面的配置代码），并将其赋给`FetchConfigPlugin`实例对象
+上述代码的`constructor`中有一个 name 的字段，它有一个非常重要的作用，从最终配置中找出名为`fetchConfig`的字段（如下面的配置代码），并将其赋给`FetchConfigPlugin`实例对象
 
 ```javascript
 module.exports = () => {
@@ -48,3 +48,14 @@ module.exports = () => {
   return config;
 };
 ```
+
+### 启动服务
+
+```javascript
+const { Service } = require("@plugboard/core");
+
+const service = new Service();
+service.start();
+```
+
+上述代码就能启动带有`FetchConfigPlugin`插件的服务，根据`host`地址获取远端配置信息。

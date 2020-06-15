@@ -12,7 +12,7 @@
     "docs:build": "vuepress build docs"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@vue/component-compiler-utils": "^3.1.2",
     "@vuepress/shared-utils": "^1.5.0",

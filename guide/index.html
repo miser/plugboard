@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PlugBoard 是什么？ | PlugBoard</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="以插件为中心按需配置解决复杂业务">
+    <link rel="preload" href="/assets/css/0.styles.6b7e16bd.css" as="style"><link rel="preload" href="/assets/js/app.751db8c9.js" as="script"><link rel="preload" href="/assets/js/2.89c4b18d.js" as="script"><link rel="preload" href="/assets/js/6.49ac8be9.js" as="script"><link rel="prefetch" href="/assets/js/3.faecf10e.js"><link rel="prefetch" href="/assets/js/4.35e30f81.js"><link rel="prefetch" href="/assets/js/5.2685b240.js"><link rel="prefetch" href="/assets/js/7.58268996.js"><link rel="prefetch" href="/assets/js/8.54b61e96.js"><link rel="prefetch" href="/assets/js/9.f917acd0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6b7e16bd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">PlugBoard</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  指南
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  指南
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="active sidebar-link">PlugBoard 是什么？</a></li><li><a href="/guide/lifecycle.html" class="sidebar-link">生命周期</a></li><li><a href="/guide/config.html" class="sidebar-link">环境配置</a></li><li><a href="/guide/plugin.html" class="sidebar-link">插件开发</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="plugboard-是什么？"><a href="#plugboard-是什么？" class="header-anchor">#</a> PlugBoard 是什么？</h1> <p>定义了一套带有生命周期的“插板”，通过编写符合生命周期的插件，PlugBoard 就能按不同环境需求配置，加载出符合场景业务的应用。由此引出四个重要概念：</p> <ul><li><p><strong>生命周期</strong>： 任何程序都有它的运行周期，它规范了程序什么时候该做什么，条理清晰方便开发和维护。PlugBoard 为插件定义了 <code>willRun</code>、<code>run</code>、<code>hadRun</code>、<code>close</code>(目前较为特殊，不主动触发)</p></li> <li><p><strong>环境配置</strong>：应用从开发到上线会有几个阶段，各个团队的需求各有不同，比如<code>开发阶段（dev）</code>、<code>测试验证（test）</code>和<code>生产（prod）</code>等，不同环境下的环境配置和需求不同。比如在<code>开发阶段（dev）</code>不需要从远端拉取配置文件，而<code>测试验证（test）</code>和<code>生产（prod）</code>需要从不同<strong>域名</strong>去拉取配置，那么可以在不同的<code>'config.${evn}.js'</code>文件中，设置不同的<strong>域名</strong>。</p></li> <li><p><strong>加载插件</strong>：根据不同环境的配置，加载其对应的插件。</p></li> <li><p><strong>插件开发</strong>：可以将业务逻辑打散到不同的插件中，把插件做成高复用性，在多个场景中组合构建出新的应用。</p></li></ul> <br> <br> <p>接下来，我们一步步仔细的把上面的概念拆分说下。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/guide/lifecycle.html">
+        生命周期
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.751db8c9.js" defer></script><script src="/assets/js/2.89c4b18d.js" defer></script><script src="/assets/js/6.49ac8be9.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>插件开发 | PlugBoard</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="以插件为中心按需配置解决复杂业务">
+    <link rel="preload" href="/assets/css/0.styles.6b7e16bd.css" as="style"><link rel="preload" href="/assets/js/app.751db8c9.js" as="script"><link rel="preload" href="/assets/js/2.89c4b18d.js" as="script"><link rel="preload" href="/assets/js/9.f917acd0.js" as="script"><link rel="prefetch" href="/assets/js/3.faecf10e.js"><link rel="prefetch" href="/assets/js/4.35e30f81.js"><link rel="prefetch" href="/assets/js/5.2685b240.js"><link rel="prefetch" href="/assets/js/6.49ac8be9.js"><link rel="prefetch" href="/assets/js/7.58268996.js"><link rel="prefetch" href="/assets/js/8.54b61e96.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6b7e16bd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">PlugBoard</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  指南
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">
+  指南
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/" aria-current="page" class="sidebar-link">PlugBoard 是什么？</a></li><li><a href="/guide/lifecycle.html" class="sidebar-link">生命周期</a></li><li><a href="/guide/config.html" class="sidebar-link">环境配置</a></li><li><a href="/guide/plugin.html" aria-current="page" class="active sidebar-link">插件开发</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="插件开发"><a href="#插件开发" class="header-anchor">#</a> 插件开发</h1> <p>给 <strong>PlugBoard</strong> 开发一个插件是非常容易的</p> <h3 id="举个例子"><a href="#举个例子" class="header-anchor">#</a> 举个例子</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// fetch-config-plugin</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> Plugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;@plugboard/core&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> axios <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;axios&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">FetchConfigPlugin</span> <span class="token keyword">extends</span> <span class="token class-name">Plugin</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">opt</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>opt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;fetch-config&quot;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">willRun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> vers <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span>vers <span class="token operator">=</span> vers<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>config<span class="token punctuation">.</span>host<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> FetchConfigPlugin<span class="token punctuation">;</span>
+</code></pre></div><p>上述代码的<code>constructor</code>中有一个 name 的字段，它的一个非常重要的作用就是从最后的配置中找出名为<code>fetchConfig</code>的字段（如下面的配置代码），并将其赋给<code>FetchConfigPlugin</code>实例对象</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  config<span class="token punctuation">.</span>fetchConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+    host<span class="token operator">:</span> <span class="token string">&quot;获取配置的URL地址&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  config<span class="token punctuation">.</span>plugins <span class="token operator">=</span> <span class="token punctuation">{</span>
+    fetchConfig<span class="token operator">:</span> <span class="token punctuation">{</span>
+      enable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token string">&quot;FetchConfigPlugin&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 安装在node_modules里的PlugBoard插件 —— FetchConfigPlugin</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> config<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/config.html" class="prev">
+        环境配置
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.751db8c9.js" defer></script><script src="/assets/js/2.89c4b18d.js" defer></script><script src="/assets/js/9.f917acd0.js" defer></script>
+  </body>
+</html>

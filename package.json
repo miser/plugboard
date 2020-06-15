@@ -6,7 +6,9 @@
     "test:unit": "mocha",
     "cover": "npm run cover:unit && npm run cover:report",
     "cover:unit": "nyc --silent npm run test:unit",
-    "cover:report": "nyc report --reporter=lcov --reporter=text"
+    "cover:report": "nyc report --reporter=lcov --reporter=text",
+    "docs:dev": "vuepress dev packages/docs/docs",
+    "docs:build": "vuepress build packages/docs/docs"
   },
   "devDependencies": {
     "eslint": "^6.7.2",

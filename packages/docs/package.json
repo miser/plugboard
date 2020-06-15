@@ -13,9 +13,6 @@
   },
   "author": "",
   "license": "ISC",
-  "publishConfig": {
-    "registry": "http://maven.service.oriente.com/repository/o-npm/"
-  },
   "dependencies": {
     "@vue/component-compiler-utils": "^3.1.2",
     "@vuepress/shared-utils": "^1.5.0",

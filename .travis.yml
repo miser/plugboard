@@ -2,13 +2,13 @@ language: node_js
 node_js:
   - lts/*
 install:
-  - yarn install
+  - npm install
 script:
-  - yarn docs:build
+  - npm run docs:build
 deploy:
   provider: pages
   skip_cleanup: true
-  local_dir: docs/.vuepress/dist
+  local_dir: packages/docs/docs/.vuepress/dist
   github_token: $GITHUB_TOKEN
   keep_history: true
   on:

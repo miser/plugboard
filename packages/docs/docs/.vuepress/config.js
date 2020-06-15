@@ -1,4 +1,5 @@
 module.exports = (ctx) => ({
+  base: "/plugboard/",
   locales: {
     "/": {
       lang: "zh",

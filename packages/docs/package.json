@@ -1,0 +1,29 @@
+{
+  "name": "@plugboard/docs",
+  "version": "0.5.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://maven.service.oriente.com/repository/o-npm/"
+  },
+  "dependencies": {
+    "@vue/component-compiler-utils": "^3.1.2",
+    "@vuepress/shared-utils": "^1.5.0",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-plantuml": "^1.4.1",
+    "toml": "^3.0.0"
+  },
+  "devDependencies": {
+    "vuepress-plugin-flowchart": "^1.4.3"
+  }
+}

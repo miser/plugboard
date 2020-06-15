@@ -1,0 +1,41 @@
+{
+  "name": "@plugboard/core",
+  "version": "0.5.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && mocha --require intelli-espower-loader",
+    "coverage": "nyc npm run test"
+  },
+  "author": "",
+  "files": [
+    "config/*",
+    "lib/*",
+    "index.js"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-mocha": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "intelli-espower-loader": "^1.0.1",
+    "power-assert": "^1.6.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "decamelize": "^3.2.0",
+    "lodash": "^4.17.15",
+    "log4js": "^6.1.0",
+    "read-pkg": "^5.2.0"
+  },
+  "publishConfig": {
+    "registry": "http://maven.service.oriente.com/repository/o-npm/"
+  },
+  "gitHead": "9f17d022641499275d77d3ad72c99474907448fc"
+}

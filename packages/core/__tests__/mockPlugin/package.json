@@ -1,0 +1,4 @@
+{
+  "name": "@plugboard/mockPlugin",
+  "main": "lib/index.js"
+}

@@ -1,0 +1,6 @@
+--require power-assert
+--full-trace
+
+test/index.js
+packages/**/__tests__/*.spec.js
+

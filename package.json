@@ -1,0 +1,30 @@
+{
+  "name": "plugboard",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test:unit": "mocha",
+    "cover": "npm run cover:unit && npm run cover:report",
+    "cover:unit": "nyc --silent npm run test:unit",
+    "cover:report": "nyc report --reporter=lcov --reporter=text"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "espower-loader": "^1.2.2",
+    "husky": "^4.0.0",
+    "intelli-espower-loader": "^1.0.1",
+    "lerna": "^3.20.2",
+    "mocha": "^7.0.0",
+    "nyc": "^15.0.0",
+    "power-assert": "^1.6.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
+    "sinon": "^9.0.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

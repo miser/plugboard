@@ -2,5 +2,5 @@
 --full-trace
 
 test/index.js
-packages/**/__tests__/*.spec.js
+packages/core/__tests__/*.spec.js
 

@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - lts/*
 install:
-  - npm install
+	- npm install
+	- lerna bootstrap
 script:
   - npm run cover
   - npm run docs:build

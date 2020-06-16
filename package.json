@@ -29,5 +29,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@plugboard/core": "file:packages/core",
+    "@plugboard/docs": "file:packages/docs"
+  }
 }

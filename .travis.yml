@@ -3,8 +3,7 @@ node_js:
   - lts/*
 install:
   - npm install
-  - npm i lerna -g
-  - lerna bootstrap
+  - ./node_modules/.bin/lerna bootstrap
 script:
   - npm run cover
   - npm run docs:build

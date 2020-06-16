@@ -3,7 +3,9 @@ node_js:
   - lts/*
 install:
   - npm install
+  - ./node_modules/.bin/lerna bootstrap
 script:
+  - npm run cover
   - npm run docs:build
 deploy:
   provider: pages

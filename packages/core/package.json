@@ -33,5 +33,6 @@
     "lodash": "^4.17.15",
     "log4js": "^6.1.0",
     "read-pkg": "^5.2.0"
-  }
+  },
+  "gitHead": "6ef01af86b4f8c846facd7e7164aee4e8388bd46"
 }

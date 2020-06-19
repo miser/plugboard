@@ -1,7 +1,10 @@
 {
   "name": "@plugboard/core",
-  "version": "0.5.0",
-  "description": "",
+  "version": "0.5.2",
+  "description": "以插件为中心按需配置解决复杂业务",
+  "keywords": [
+    "plugin"
+  ],
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -14,7 +17,7 @@
     "lib/*",
     "index.js"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -34,8 +37,10 @@
     "log4js": "^6.1.0",
     "read-pkg": "^5.2.0"
   },
-  "publishConfig": {
-    "registry": "http://maven.service.oriente.com/repository/o-npm/"
+  "homepage": "https://mlib.wang/plugboard/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miser/plugboard"
   },
-  "gitHead": "9f17d022641499275d77d3ad72c99474907448fc"
+  "gitHead": "d7260cf4b035f7de2bab031091a3cffddd7cd413"
 }

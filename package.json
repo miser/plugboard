@@ -1,7 +1,7 @@
 {
   "name": "plugboard",
   "version": "0.1.0",
-  "description": "",
+  "description": "以插件为中心按需配置解决复杂业务",
   "scripts": {
     "test:unit": "mocha",
     "cover": "npm run cover:unit && npm run cover:report",
@@ -27,7 +27,9 @@
     "sinon": "^9.0.2",
     "vuepress": "^1.5.2"
   },
-  "keywords": [],
+  "keywords": [
+    "plugin"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {

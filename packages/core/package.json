@@ -33,9 +33,5 @@
     "lodash": "^4.17.15",
     "log4js": "^6.1.0",
     "read-pkg": "^5.2.0"
-  },
-  "publishConfig": {
-    "registry": "http://maven.service.oriente.com/repository/o-npm/"
-  },
-  "gitHead": "9f17d022641499275d77d3ad72c99474907448fc"
+  }
 }
